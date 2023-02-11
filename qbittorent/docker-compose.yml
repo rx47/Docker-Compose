@@ -1,0 +1,18 @@
+version: "3"
+services:
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - TZ=Europe/London
+      - WEBUI_PORT=6880
+    volumes:
+      - ./:/downloads
+    ports:
+      - 6880:6880
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+
+#username=admin
+#password=adminadmin
